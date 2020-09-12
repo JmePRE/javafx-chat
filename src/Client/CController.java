@@ -60,6 +60,9 @@ public class CController {
 	    		messagelog = messagelog + "SYS: Error connecting to server " + mchine + "\n";
 	    	}
 	    	chatTextArea.setText(messagelog);
+	    	
+	    	
+	    	
     	} else {
     		messagelog = messagelog + "SYS: Please specify a server" + "\n";
     		chatTextArea.setText(messagelog);

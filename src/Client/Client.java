@@ -18,9 +18,15 @@ public class Client extends Application{
   public static Thread client;
   public static ServerThread serverthread;
   public static Socket socket;
+  
+  public static CController control;
 	
   public void start(Stage primaryStage) throws Exception{
-      Parent root = FXMLLoader.load(getClass().getResource("chat.fxml"));
+	  FXMLLoader loader = new FXMLLoader(getClass().getResource("chat.fxml"));
+	  Parent root = loader.load();
+	  control = (CController)loader.getController();
+	  //Parent root = FXMLLoader.load(getClass().getResource("chat.fxml"));
+      //control = (CController) FXMLLoader.getController();
       primaryStage.setTitle("Chat App (Client)");
       primaryStage.setScene(new Scene(root, 1000, 700));
       primaryStage.show();
