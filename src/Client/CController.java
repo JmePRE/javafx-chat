@@ -86,7 +86,10 @@ public class CController {
 	    	Client.serverthread.getWriter().println(sender + "þ" + Client.name + "@" + sender + ": " + message);
 	    	//Client.serverthread.getWriter().println(Client.name + ": " + message);
 	    	messageField.setText("");
-	    	//messagelog = messagelog + "You" + ": " + message + "\n";
+	    	
+	    	if (!(sender.equals("All"))) {
+	    	messagelog = messagelog + Client.name + "@" + sender + ": " + message + "\n";
+	    	}
 	    	chatTextArea.setText(messagelog);
     	}
     }
