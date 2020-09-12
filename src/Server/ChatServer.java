@@ -65,12 +65,9 @@ public class ChatServer extends Application{
 	  serverSocket = null;
 	  
 	  try {
-		  
 		  serverSocket = new ServerSocket(portNumber);
 		  System.out.println("Listening on port " + String.valueOf(portNumber));
 		  System.out.println("Your address is " + ip);
-		  
-		  
 		  acceptClients();
 
 		  
