@@ -101,7 +101,6 @@ public class ChatServer extends Application{
 		System.out.println("ERROR: Port must be an integer!");
 	}
 
-	  //Application.launch(args);
 	  
       
   }
