@@ -54,12 +54,16 @@ public class ClientThread extends ChatServer implements Runnable{
 			//checks for new messages consistently
 			while (socket.isClosed() == false) {
 				String message = br.readLine();
+				String recipient = "";
 				
-				String[] parts = message.split("þ");
-				String recipient = parts[0];
-				System.out.println(recipient);
-				System.out.println(message);
-				message = parts[1];
+				if (message != null) {
+					String[] parts = message.split("þ");
+					recipient = parts[0];
+					System.out.println(recipient);
+					System.out.println(message);
+					if (parts.length > 1) {
+						message = parts[1];
+					}
 				
 				for (ClientThread client : clients) {
 					/**
@@ -77,9 +81,9 @@ public class ClientThread extends ChatServer implements Runnable{
 						if (client.getName().equals(this.name)) {
 							int index = clients.indexOf(client);
 							clients.remove(client);
+							System.out.println(name + " removed");
 							names.remove(this.name);
 						}
-						break;
 						
 					}
 					if ((recipient.equals("All")) || (recipient.equals(client.getName())) ) {
@@ -93,6 +97,7 @@ public class ClientThread extends ChatServer implements Runnable{
 						}
 					}
 				}
+			}
 			
 			
 			
